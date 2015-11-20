@@ -3,22 +3,23 @@
 //
 // This is only a SKELETON file for the "Hamming" exercise. It's been provided as a
 // convenience to get you started writing code faster.
+// I received feedback on this on the exercism site, use that feedback to update this
 //
 
 function distance($a, $b) {
 
+    if (strlen($a) != strlen($b)) {
+        throw new InvalidArgumentException('DNA strands must be of equal length.');
+        return false;
+    }
+
 	$calculatedDistance = 0;
-	$stringA = str_split($a);
-	$stringB = str_split($b);
 
-	if (count($stringA) != count($stringB)) {
-		throw new InvalidArgumentException('DNA strands must be of equal length.');
-	}
-
-	foreach ($stringA as $key => $value) {
-		if (strcmp($value, $stringB[$key]) != 0) {
-			$calculatedDistance++;
-		}
+	$length = strlen($a);
+	for ($i=0; $i<$length; $i++) {
+	    if($a[$i] != $b[$i]){
+	    	$calculatedDistance++;
+	    }
 	}
 
 	return $calculatedDistance;
