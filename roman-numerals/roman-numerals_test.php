@@ -17,13 +17,13 @@ class RomanTest extends PHPUnit_Framework_TestCase
 
     public function test3()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $this->assertSame('III', toRoman(3));
     }
 
     public function test4()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $this->assertSame('IV', toRoman(4));
     }
 
