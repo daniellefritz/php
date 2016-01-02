@@ -1,4 +1,4 @@
-<?php
+<?php //9:10
 function toRoman($number) {
 	$numerals = [
 		1    => "I",
@@ -10,5 +10,17 @@ function toRoman($number) {
 		1000 => "M",
 	];
 
-	return $numerals[$number];
+	$result = "";
+
+	foreach ($numerals as $numeral => $roman_numeral) {
+		if ($number % $numeral === 0 && $number >= $numeral) {
+			$times = $number / $numeral;
+			do {
+				$result .= $numerals[$numeral];
+				$times = $times - $numeral;
+			} while ($times > 0);
+		}
+	}
+
+	return $result;
 }

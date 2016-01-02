@@ -11,7 +11,7 @@ class RomanTest extends PHPUnit_Framework_TestCase
 
     public function test2()
     {
-        $this->markTestSkipped();
+        //$this->markTestSkipped();
         $this->assertSame('II', toRoman(2));
     }
 
